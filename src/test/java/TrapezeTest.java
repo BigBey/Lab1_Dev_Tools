@@ -33,4 +33,20 @@ public class TrapezeTest {
         boolean expected = t1.getA() == t2.getA() && t1.getB() == t2.getB() && t1.getC() == t2.getC() && t1.getD() == t2.getD();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getROfInscribedCircle(){
+        Trapeze t = new Trapeze(6,10,8,8);
+        double actual = t.getROfInscribedCircle();
+        double expected = Math.sqrt(t.getA() * t.getB()) / 2;
+        assertEquals(expected, actual,0.0001);
+    }
+
+    @Test
+    public void getSquareOfInscribedCicrle(){
+        Trapeze t = new Trapeze(6,10,8,8);
+        double actual = t.getROfInscribedCircle();
+        double expected = Math.PI*t.getROfInscribedCircle()*t.getROfInscribedCircle();
+        assertEquals(expected, actual,0.0001);
+    }
 }
