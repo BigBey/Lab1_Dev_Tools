@@ -1,11 +1,10 @@
 /**
- * Это класс Triangle(треугольник), он реализует интерфейс GeometricalFigure.
- * Имеет поля a,b,c типа double - соответственно стороны треугольника.
+ * Это класс Rectangle(прямоугольник), он реализует интерфейс GeometricalFigure и имеет поля a,b(стороны прямоугольника).
  */
-public class Triangle implements GeometricalFigure {
+public class Rectangle implements GeometricalFigure{
+
     private double a;
     private double b;
-    private double c;
 
     /**
      * @return double(геттер)
@@ -22,37 +21,27 @@ public class Triangle implements GeometricalFigure {
     }
 
     /**
-     * @return double(геттер)
-     */
-    public double getC() {
-        return c;
-    }
-
-    /**
      * @param a
      * @param b
-     * @param c
-     * Конструктор для всех полей класса
+     * конструктор
      */
-    public Triangle(double a, double b, double c) {
+    public Rectangle(double a, double b) {
         this.a = a;
         this.b = b;
-        this.c = c;
     }
 
     /**
      * @return double(реализация метода double getPerimeter() из интерфейса GeometricalFigure)
      */
     public double getPerimeter() {
-        return a+b+c;
+        return 2*a+2*b;
     }
 
     /**
      * @return double(реализация метода double getSquare() из интерфейса GeometricalFigure)
      */
     public double getSquare() {
-        double p = (a+b+c)/2;
-        return Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        return a*b;
     }
 
     /**
@@ -61,6 +50,6 @@ public class Triangle implements GeometricalFigure {
      */
     @Override
     public boolean equals(Object obj) {
-        return this.a == ((Triangle)obj).a && this.b == ((Triangle)obj).b && this.c == ((Triangle)obj).c;
+        return this.a == ((Rectangle)obj).a && this.b == ((Rectangle)obj).b;
     }
 }
