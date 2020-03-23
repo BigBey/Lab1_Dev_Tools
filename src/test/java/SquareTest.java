@@ -30,4 +30,20 @@ public class SquareTest {
         boolean expected = s1.getA() == s2.getA();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getROfInscribedCircle(){
+        Square s = new Square(5);
+        double actual = s.getROfInscribedCircle();
+        double expected = s.getA();
+        assertEquals(expected, actual,0.0001);
+    }
+
+    @Test
+    public void getSquareOfInscribedCicrle(){
+        Square s = new Square(5);
+        double actual = s.getSquareOfInscribedCicrle();
+        double expected = Math.PI*s.getROfInscribedCircle()*s.getROfInscribedCircle();
+        assertEquals(expected, actual,0.0001);
+    }
 }
