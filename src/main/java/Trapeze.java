@@ -83,4 +83,9 @@ public class Trapeze implements GeometricalFigure, InscribedCircle{
             return -1;
         }
     }
+
+    public double getSquareOfInscribedCicrle() {
+        double r = getROfInscribedCircle();
+        return Math.PI*r*r;
+    }
 }

@@ -67,4 +67,9 @@ public class Triangle implements GeometricalFigure, InscribedCircle {
     public double getROfInscribedCircle() {
         return getSquare()/(a+b+c);
     }
+
+    public double getSquareOfInscribedCicrle() {
+        double r = getROfInscribedCircle();
+        return Math.PI*r*r;
+    }
 }

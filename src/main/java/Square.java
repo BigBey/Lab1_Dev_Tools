@@ -46,4 +46,9 @@ public class Square implements GeometricalFigure, InscribedCircle {
     public double getROfInscribedCircle() {
         return a;
     }
+
+    public double getSquareOfInscribedCicrle() {
+        double r = getROfInscribedCircle();
+        return Math.PI*r*r;
+    }
 }
