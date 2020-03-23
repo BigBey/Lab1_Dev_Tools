@@ -2,7 +2,7 @@
  * Это класс Triangle(треугольник), он реализует интерфейс GeometricalFigure.
  * Имеет поля a,b,c типа double - соответственно стороны треугольника.
  */
-public class Triangle implements GeometricalFigure {
+public class Triangle implements GeometricalFigure, InscribedCircle {
     private double a;
     private double b;
     private double c;
@@ -62,5 +62,9 @@ public class Triangle implements GeometricalFigure {
     @Override
     public boolean equals(Object obj) {
         return this.a == ((Triangle)obj).a && this.b == ((Triangle)obj).b && this.c == ((Triangle)obj).c;
+    }
+
+    public double getROfInscribedCircle() {
+        return getSquare()/(a+b+c);
     }
 }

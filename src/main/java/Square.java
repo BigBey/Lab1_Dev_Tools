@@ -1,7 +1,7 @@
 /**
  * Это класс Square(квадрат), он реализует интерфейс GeometricalFigure и имеет поле a(сторона квадрата).
  */
-public class Square implements GeometricalFigure {
+public class Square implements GeometricalFigure, InscribedCircle {
 
     private double a;
 
@@ -41,5 +41,9 @@ public class Square implements GeometricalFigure {
     @Override
     public boolean equals(Object obj) {
         return this.a == ((Square)obj).a;
+    }
+
+    public double getROfInscribedCircle() {
+        return a;
     }
 }

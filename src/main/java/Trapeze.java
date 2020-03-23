@@ -1,7 +1,7 @@
 /**
  * Это класс Trapeze(прямоугольник), он реализует интерфейс GeometricalFigure и имеет поля a,b,c,d(стороны трапеции).
  */
-public class Trapeze implements GeometricalFigure{
+public class Trapeze implements GeometricalFigure, InscribedCircle{
 
     private double a;
     private double b;
@@ -74,5 +74,13 @@ public class Trapeze implements GeometricalFigure{
                 && this.b == ((Trapeze)obj).b
                 && this.c == ((Trapeze)obj).c
                 && this.d == ((Trapeze)obj).d;
+    }
+
+    public double getROfInscribedCircle() {
+        if(a+b == c+d) {
+            return Math.sqrt(a * b) / 2;
+        }else{
+            return -1;
+        }
     }
 }
