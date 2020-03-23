@@ -1,5 +1,5 @@
 /**
- * Это класс Square(круг), он реализует интерфейс GeometricalFigure и имеет поле a(сторона квадрата).
+ * Это класс Square(квадрат), он реализует интерфейс GeometricalFigure и имеет поле a(сторона квадрата).
  */
 public class Square implements GeometricalFigure {
 

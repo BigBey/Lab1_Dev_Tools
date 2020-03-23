@@ -1,5 +1,5 @@
 /**
- * Это класс Triangle(круг), он реализует интерфейс GeometricalFigure.
+ * Это класс Triangle(треугольник), он реализует интерфейс GeometricalFigure.
  * Имеет поля a,b,c типа double - соответственно стороны треугольника.
  */
 public class Triangle implements GeometricalFigure {
@@ -57,7 +57,7 @@ public class Triangle implements GeometricalFigure {
 
     /**
      * @param obj
-     * @return boolean(переопределение метода boolean equals() класса Object, чтобы сравнивать фигуры
+     * @return boolean(переопределение метода boolean equals() класса Object, чтобы сравнивать фигуры)
      */
     @Override
     public boolean equals(Object obj) {
