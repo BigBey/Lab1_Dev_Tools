@@ -29,4 +29,22 @@ public class TriangleTest {
         boolean expected = t1.getA() == t2.getA() && t1.getB() == t1.getB() && t1.getC() == t2.getC();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getROfInscribedCircle(){
+        Triangle t = new Triangle(2,2,3);
+        double actual = t.getROfInscribedCircle();
+        double p = (t.getA() + t.getB() + t.getC())/2;
+        double s = Math.sqrt(p*(p-t.getA())*(p-t.getB())*(p-t.getC()));
+        double expected = s/2/p;
+        assertEquals(expected, actual,0.0001);
+    }
+
+    @Test
+    public void getSquareOfInscribedCicrle(){
+        Triangle t = new Triangle(2,2,3);
+        double actual = t.getSquareOfInscribedCicrle();
+        double expected = Math.PI*t.getROfInscribedCircle()*t.getROfInscribedCircle();
+        assertEquals(expected, actual,0.0001);
+    }
 }

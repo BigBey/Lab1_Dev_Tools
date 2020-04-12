@@ -1,11 +1,12 @@
 /**
- * Это класс Triangle(треугольник), он реализует интерфейс GeometricalFigure.
- * Имеет поля a,b,c типа double - соответственно стороны треугольника.
+ * Это класс Trapeze(прямоугольник), он реализует интерфейс GeometricalFigure и имеет поля a,b,c,d(стороны трапеции).
  */
-public class Triangle implements GeometricalFigure, InscribedCircle {
+public class Trapeze implements GeometricalFigure, InscribedCircle{
+
     private double a;
     private double b;
     private double c;
+    private double d;
 
     /**
      * @return double(геттер)
@@ -29,30 +30,38 @@ public class Triangle implements GeometricalFigure, InscribedCircle {
     }
 
     /**
+     * @return double(геттер)
+     */
+    public double getD() {
+        return d;
+    }
+
+    /**
      * @param a
      * @param b
      * @param c
-     * Конструктор для всех полей класса
+     * @param d
+     * конструктор
      */
-    public Triangle(double a, double b, double c) {
+    public Trapeze(double a, double b, double c, double d) {
         this.a = a;
         this.b = b;
         this.c = c;
+        this.d = d;
     }
 
     /**
      * @return double(реализация метода double getPerimeter() из интерфейса GeometricalFigure)
      */
     public double getPerimeter() {
-        return a+b+c;
+        return a+b+c+d;
     }
 
     /**
      * @return double(реализация метода double getSquare() из интерфейса GeometricalFigure)
      */
     public double getSquare() {
-        double p = (a+b+c)/2;
-        return Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        return (a+b)/2*Math.sqrt(c*c-(((b-a)*(b-a)+c*c-d*d)/(2*(b-a)))*(((b-a)*(b-a)+c*c-d*d)/(2*(b-a))));
     }
 
     /**
@@ -61,11 +70,18 @@ public class Triangle implements GeometricalFigure, InscribedCircle {
      */
     @Override
     public boolean equals(Object obj) {
-        return this.a == ((Triangle)obj).a && this.b == ((Triangle)obj).b && this.c == ((Triangle)obj).c;
+        return this.a == ((Trapeze)obj).a
+                && this.b == ((Trapeze)obj).b
+                && this.c == ((Trapeze)obj).c
+                && this.d == ((Trapeze)obj).d;
     }
 
     public double getROfInscribedCircle() {
-        return getSquare()/(a+b+c);
+        if(a+b == c+d) {
+            return Math.sqrt(a * b) / 2;
+        }else{
+            return -1;
+        }
     }
 
     public double getSquareOfInscribedCicrle() {

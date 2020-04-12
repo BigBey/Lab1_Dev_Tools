@@ -5,5 +5,7 @@ public class Main {
         System.out.println(perimeter);
         Double square = c.getSquare();
         System.out.println(square);
+
+
     }
 }
